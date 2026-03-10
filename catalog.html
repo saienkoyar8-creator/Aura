@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный Каталог | AURA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-page="catalog">
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AURA.</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a>
+                <a href="catalog.html" class="nav-link active" data-i18n="nav.catalog">Каталог</a>
+                <a href="about.html" class="nav-link" data-i18n="nav.about">О студии</a>
+            </nav>
+            <div class="lang-switcher">
+                <span data-lang="ru" class="lang-btn active">RU</span>
+                <span data-lang="uk" class="lang-btn">UK</span>
+            </div>
+            <button class="cart-trigger" id="cart-trigger" aria-label="Открыть корзину">
+                <span data-i18n="nav.cart">Корзина</span> <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <section class="catalog section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="page-title" data-i18n="catalog_page.title">Каталог</h1>
+                    <p class="section-desc" data-i18n="catalog_page.desc">Вся коллекция объектов для вашего пространства.</p>
+                </div>
+                
+                <div class="product-grid" id="catalog-grid">
+                    <!-- Products injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">AURA.</div>
+            <div class="footer-info">
+                <p data-i18n="footer.desc">Официальный бутик авангардной мебели.</p>
+                <p>support@aura-design.ru | +7 (999) 000-00-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart & Modals are injected by JS in a real app, but we repeat it here for static demo -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Ваша корзина</h3>
+            <button class="close-cart" id="close-cart" aria-label="Закрыть корзину">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-row"><span data-i18n="cart.total">Итого:</span><span id="cart-total" class="total-price">0 ₽</span></div>
+            <button class="btn-primary checkout-btn" id="checkout-btn" data-i18n="cart.checkout">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="success-animation">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                  <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                  <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+            <h2 class="modal-title" data-i18n="modal.title">Безупречный выбор.</h2>
+            <p class="modal-text" data-i18n="modal.text1">Благодарим за заказ. Мы зарезервировали объекты для вас.</p>
+            <p class="modal-text" data-i18n="modal.text2">Наш арт-консультант позвонит вам в течение 10 минут, чтобы уточнить детали доставки.</p>
+            <button id="close-modal" class="btn-secondary" data-i18n="modal.btn">Вернуться на сайт</button>
+        </div>
+    </div>
+
+    <div id="notification-area"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О студии | AURA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-page="about">
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AURA.</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Главная</a>
+                <a href="catalog.html" class="nav-link" data-i18n="nav.catalog">Каталог</a>
+                <a href="about.html" class="nav-link active" data-i18n="nav.about">О студии</a>
+            </nav>
+            <div class="lang-switcher">
+                <span data-lang="ru" class="lang-btn active">RU</span>
+                <span data-lang="uk" class="lang-btn">UK</span>
+            </div>
+            <button class="cart-trigger" id="cart-trigger" aria-label="Открыть корзину">
+                <span data-i18n="nav.cart">Корзина</span> <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <section class="about-hero section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="page-title" data-i18n="about_page.title">О студии</h1>
+                    <p class="section-desc" data-i18n="about_page.hero_desc" style="max-width: 800px; margin: 0 auto 3rem auto;">AURA была основана в 2018 году с единственной целью — создавать объекты, которые выходят за рамки обыденности.</p>
+                </div>
+                
+                <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 4rem;">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover; filter: brightness(0.8);" alt="Студия AURA">
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                    <div>
+                        <h2 class="section-title" data-i18n="about_page.approach_title" style="margin-bottom: 1.5rem; font-size: 2rem;">Наш подход</h2>
+                        <p class="section-desc" data-i18n="about_page.approach_text" style="text-align: left;">Мы стираем границы между искусством и функциональным дизайном. Каждый предмет — это результат глубоких размышлений о форме, материале и человечеком восприятии. Нас вдохновляет деконструктивизм, брутализм и природная асимметрия.</p>
+                    </div>
+                    <div>
+                        <h2 class="section-title" data-i18n="about_page.prod_title" style="margin-bottom: 1.5rem; font-size: 2rem;">Производство</h2>
+                        <p class="section-desc" data-i18n="about_page.prod_text" style="text-align: left;">Все объекты создаются вручную в нашей мастерской небольшими тиражами или в единственном экземпляре. Мы работаем только с премиальными и честными материалами: массивом дерева, натуральным камнем, сталью и стеклом.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">AURA.</div>
+            <div class="footer-info">
+                <p data-i18n="footer.desc">Официальный бутик авангардной мебели.</p>
+                <p>support@aura-design.ru | +7 (999) 000-00-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Ваша корзина</h3>
+            <button class="close-cart" id="close-cart" aria-label="Закрыть корзину">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span data-i18n="cart.total">Итого:</span>
+                <span id="cart-total" class="total-price">0 ₽</span>
+            </div>
+            <button class="btn-primary checkout-btn" id="checkout-btn" data-i18n="cart.checkout">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- Aesthetic Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="success-animation">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                  <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                  <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+            <h2 class="modal-title" data-i18n="modal.title">Безупречный выбор.</h2>
+            <p class="modal-text" data-i18n="modal.text1">Благодарим за заказ. Мы зарезервировали объекты для вас.</p>
+            <p class="modal-text" data-i18n="modal.text2">Наш арт-консультант позвонит вам в течение 10 минут, чтобы уточнить детали доставки.</p>
+            <button id="close-modal" class="btn-secondary" data-i18n="modal.btn">Вернуться на сайт</button>
+        </div>
+    </div>
+
+    <!-- Notifications Area -->
+    <div id="notification-area"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

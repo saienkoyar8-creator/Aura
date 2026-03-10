@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | Архитектура формы</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-page="home">
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AURA.</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active" data-i18n="nav.home">Главная</a>
+                <a href="catalog.html" class="nav-link" data-i18n="nav.catalog">Каталог</a>
+                <a href="about.html" class="nav-link" data-i18n="nav.about">О студии</a>
+            </nav>
+            <div class="lang-switcher">
+                <span data-lang="ru" class="lang-btn active">RU</span>
+                <span data-lang="uk" class="lang-btn">UK</span>
+            </div>
+            <button class="cart-trigger" id="cart-trigger" aria-label="Открыть корзину">
+                <span data-i18n="nav.cart">Корзина</span> <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-tag" data-i18n="hero.tag">Новая коллекция 2026</span>
+                    <h1 class="hero-title" data-i18n="hero.title">Искусство <br>в каждом <em>предмете.</em></h1>
+                    <p class="hero-text" data-i18n="hero.text">Мы создаем лимитированную мебель, которая становится
+                        центром вашего пространства. Форма, текстура, смысл.</p>
+                    <a href="catalog.html" class="btn-primary hero-btn" data-i18n="hero.btn">Смотреть объекты</a>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1200&auto=format&fit=crop"
+                        alt="Интерьер AURA" class="hero-image">
+                    <div class="hero-accent-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy section-padding">
+            <div class="container philosophy-container">
+                <div class="philosophy-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200&auto=format&fit=crop"
+                        alt="Философия AURA" class="philosophy-image">
+                </div>
+                <div class="philosophy-content">
+                    <h2 class="section-title" data-i18n="philosophy.title">Философия <br><em>вне времени.</em></h2>
+                    <p class="section-desc" data-i18n="philosophy.desc">Каждый предмет мебели создается вручную с
+                        использованием премиальных материалов. Мы верим, что интерьер — это отражение внутреннего мира,
+                        а правильная мебель способна изменить ощущение пространства.</p>
+                    <a href="#" class="btn-secondary" data-i18n="philosophy.btn">Читать историю студии</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="catalog section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="catalog_section.title">Избранное</h2>
+                    <p class="section-desc" data-i18n="catalog_section.desc">Ключевые объекты текущей коллекции.</p>
+                </div>
+
+                <div class="product-grid" id="featured-grid">
+                    <!-- Featured products injected via JS -->
+                </div>
+
+                <div class="center-btn-wrapper">
+                    <a href="catalog.html" class="btn-secondary" data-i18n="catalog_section.btn">Перейти в каталог (все
+                        объекты)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials Section -->
+        <section class="materials section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="materials.title">Материалы</h2>
+                    <p class="section-desc" data-i18n="materials.desc">Безупречность в деталях и тактильных ощущениях.
+                    </p>
+                </div>
+                <div class="materials-grid">
+                    <div class="material-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600&auto=format&fit=crop"
+                            alt="Дерево" class="material-image">
+                        <h3 class="material-title" data-i18n="materials.wood">Массив дуба</h3>
+                    </div>
+                    <div class="material-card">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=600&auto=format&fit=crop"
+                            alt="Камень" class="material-image">
+                        <h3 class="material-title" data-i18n="materials.stone">Натуральный камень</h3>
+                    </div>
+                    <div class="material-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop"
+                            alt="Текстиль" class="material-image">
+                        <h3 class="material-title" data-i18n="materials.textile">Премиальный текстиль</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter section-padding">
+            <div class="container newsletter-container">
+                <h2 class="newsletter-title" data-i18n="newsletter.title">Присоединяйтесь к AURA</h2>
+                <p class="newsletter-desc" data-i18n="newsletter.desc">Узнавайте первыми о новых коллекциях и закрытых
+                    мероприятиях.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Ваш Email" class="newsletter-input"
+                        data-i18n="newsletter.placeholder" data-i18n-attr="placeholder" required>
+                    <button type="submit" class="btn-primary" data-i18n="newsletter.btn">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">AURA.</div>
+            <div class="footer-info">
+                <p data-i18n="footer.desc">Официальный бутик авангардной мебели.</p>
+                <p>support@aura-design.ua | +38 (44) 250-09-10</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-i18n="cart.title">Ваша корзина</h3>
+            <button class="close-cart" id="close-cart" aria-label="Закрыть корзину">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span data-i18n="cart.total">Итого:</span>
+                <span id="cart-total" class="total-price">0 ₽</span>
+            </div>
+            <button class="btn-primary checkout-btn" id="checkout-btn" data-i18n="cart.checkout">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- Aesthetic Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="success-animation">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+            <h2 class="modal-title" data-i18n="modal.title">Безупречный выбор.</h2>
+            <p class="modal-text" data-i18n="modal.text1">Благодарим за заказ. Мы зарезервировали объекты для вас.</p>
+            <p class="modal-text" data-i18n="modal.text2">Наш арт-консультант позвонит вам в течение 10 минут, чтобы
+                уточнить детали доставки.</p>
+            <button id="close-modal" class="btn-secondary" data-i18n="modal.btn">Вернуться на сайт</button>
+        </div>
+    </div>
+
+    <!-- Notifications Area -->
+    <div id="notification-area"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
