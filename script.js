@@ -35,7 +35,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-const formatPrice = (price) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₽";
+const formatPrice = (price) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₴";
 
 function resolvePath(path, obj) {
     if (!path || !obj) return null;
